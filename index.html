@@ -13,11 +13,15 @@
 <body>
   <header>
     <nav class="header__nav">
+      <!-- The Main Logo -->
       <div class="header__logo">
-        <h4>Sushiman</h4>
+        <a href="#">
+          <h4>SUSHIMAN</h4>
+        </a>
         <div class="header__logo-overlay"></div>
       </div>
 
+      <!-- The navigation for large screens -->
       <ul class="header__menu">
         <li><a href="#menu">Menu</a></li>
         <li><a href="#food">Food</a></li>
@@ -26,11 +30,52 @@
         <li><img src="assets/search.svg" alt="Search"></li>
       </ul>
 
+      <!-- The navigation for mobile devices -->
       <ul class="header__menu-mobile">
         <li><img src="assets/menu.svg" alt="Mobile Menu"></li>
       </ul>
     </nav>
   </header>
+
+  <section class="hero">
+    <div class="hero__image">
+      <img src="assets/sushi-1.png" alt="Sushi">
+      <h2>
+        日 <br>
+        本 <br>
+        食
+      </h2>
+
+      <div class="hero__image-overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__content-info">
+        <h1>Feel the taste of Japanese food</h1>
+        <p>Feel the taste of the most popular Japanese food from anywhere at anytime.</p>
+
+        <div class="hero__content-buttons">
+          <button class="hero__content-buttons--order">Order Now</button>
+          <button class="hero__content-buttons--play">
+            <img src="assets/play-circle.svg" alt="Play Button">
+            How to order
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__content-testimonial">
+        <div class="hero__content--customer flex-center">
+          <h4>24<span>k+</span></h4>
+          <p>Happy Customers</p>
+        </div>
+
+        <div class="hero__content--review">
+          <img src="assets/user.png" alt="User">
+          <p>"This is the best Japanese food delivery service that ever existed."</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="js/main.js"></script>
 </body>

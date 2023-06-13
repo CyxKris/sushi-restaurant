@@ -22,34 +22,66 @@ header {
                 padding-left: 0;
             };
 
-            .header__logo-overlay {
+            h4 {
+                padding-left: 1.875rem;
+                color: var(--color-white);
+                color: #FFF;
+            }
+
+            &-overlay {
                 position: absolute;
                 inset: 0;
                 width: 100%;
 
-                color: var(--primary-color);
+                background-color: var(--primary-color);
+                z-index: -1;
             };
         };
-    };
 
-    // ?MEDIA QUERIES
-    @include util.breakpoint (medium) {
-        // .header__nav {
-        //     background: var(--primary-color);
-        // }
-    
-        .header__menu {
-            display: none;
-        }
-    
+        .header__menu,
         .header__menu-mobile {
+            padding: 1.25rem;
+
+            flex: 1.235;
             display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4rem;
+
+            list-style: none;
+        }
+
+        .header__menu {
+            li {
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 1.25rem;
+                text-transform: uppercase;
+                font-family: util.$jakarta;
+                color: var(--secondary-color);
+                cursor: pointer;
+
+                img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    object-fit: contain;
+                }
+            }
+
+            @include util.breakpoint (medium) {
+                display: none;
+            }
+        }
+
+        .header__menu-mobile {
+            display: none;
+            gap: 1.25rem;
+
+            position: relative;
+
+            @include util.breakpoint (medium) {
+                display: flex;
+            }
         }
     };
-    
-    // @include util.breakpoint (xsmall) {
-    //     .header__logo {
-    //         padding-left: 0;
-    //     }
-    // }
 }
