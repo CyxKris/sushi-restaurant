@@ -2,18 +2,58 @@
 
 // Media queries
 
-@include util.breakpoint (small) {
-    .about-us {
+.about-us {
+    display: flex;
+    min-height: 45rem;
+    overflow: hidden;
+
+    @include util.breakpoint (large) {
         flex-direction: column;
-    }
-    
-    .about-us__image {
-        flex-direction: row;
-    }
-    
+    };
+
+    &__image {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        background: var(--color-white);
+
+        position: relative;
+
+        @include util.breakpoint (large) {
+            flex-direction: row;
+        };
+
+        @include util.breakpoint (small) {
+            flex-direction: column;
+        };
+
+        div {
+            padding: 2rem 4rem;
+
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            // background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+        };
+
+        &--sushi3 {
+            border-bottom: 8px solid var(--color-cream);
+            background-image: url("../../assets/about_bg1.png");
+        }
+    };
+};
+
+@include util.breakpoint (large) {
+
     .about-us__image-sushi3 {
         border-bottom: none;
-        border-right: 8px solid var(--color-creamson);
+        border-right: 8px solid var(--color-cream);
     }
     
     .about-us__button {
@@ -22,12 +62,10 @@
 }
 
 @include util.breakpoint (small) {
-    .about-us__image {
-        flex-direction: column;
-    }
+
     
     .about-us__image-sushi3 {
-        border-bottom: 8px solid var(--color-creamson);
+        border-bottom: 8px solid var(--color-cream);
         border-right: none;
     }
     
