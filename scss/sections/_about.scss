@@ -40,60 +40,116 @@
             background-repeat: no-repeat;
             background-position: center;
             // background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+
+            @include util.breakpoint (xsmall) {
+                padding: 2rem;
+            };
+
+            img {
+                @include util.breakpoint (xsmall) {
+                    width: 50%;
+                    height: 160px;
+
+                    object-fit: contain;
+                };
+            };
         };
 
         &--sushi3 {
             border-bottom: 8px solid var(--color-cream);
             background-image: url("../../assets/about_bg1.png");
-        }
+
+            @include util.breakpoint (large) {
+                border-bottom: none;
+                border-right: 8px solid var(--color-cream);
+            };
+
+            @include util.breakpoint (small) {
+                border-bottom: 8px solid var(--color-cream);
+                border-right: none;
+            };
+
+            img {
+                width: 14.0625rem;
+                height: 12.5rem;
+            }
+        };
+
+        &--sushi2 {
+            background-image: url("../../assets/about_bg2.png");
+
+            img {
+                width: 15rem;
+                height: 10rem;
+            };
+        };
+
+        .about-us__button {
+            position: absolute;
+            right: 0;
+
+            padding: .75rem 2rem;
+            min-height: 4rem;
+
+            background-color: var(--secondary-color);
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+            border: 0;
+            outline: 0;
+
+            color: var(--color-white);
+            font-family: util.$jakarta;
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.4375rem;
+
+            cursor: pointer;
+
+            @include util.breakpoint (large) {
+                display: none;
+            };
+
+            @include util.breakpoint (small) {
+                display: block;
+                top: 47%;
+            };
+
+            @include util.breakpoint (xsmall) {
+                top: 44%;
+            };
+
+            img {
+                object-fit: contain;
+                margin-left: 2rem;
+            };
+        };
+    };
+
+    &__content {
+        padding: 4rem;
+
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include util.breakpoing (xsmall) {
+            padding: 2rem;
+        };
     };
 };
 
-@include util.breakpoint (large) {
-
-    .about-us__image-sushi3 {
-        border-bottom: none;
-        border-right: 8px solid var(--color-cream);
-    }
-    
-    .about-us__button {
-        display: none;
-    }
-}
-
-@include util.breakpoint (small) {
-
-    
-    .about-us__image-sushi3 {
-        border-bottom: 8px solid var(--color-cream);
-        border-right: none;
-    }
-    
-    .about-us__button {
-        display: block;
-        top: 47%;
-    }
-}
-
 @include util.breakpoint (xsmall) {
-    .about-us__image-sushi2 img,
-    .about-us__image-sushi3 img {
-        width: 50%;
-        height: 160px;
+    // .about-us__image-sushi2 img,
+    // .about-us__image-sushi3 img {
+    //     width: 50%;
+    //     height: 160px;
 
-        object-fit: contain;
-    }
+    //     object-fit: contain;
+    // }
 
-    .about-us__image div {
-        padding: 32px;
-    }
-
-    .about-us__button {
-        top: 44%;
-    }
-
-    .about-us__content {
-        padding: 32px;
-    }
+    // .about-us__image div {
+    //     padding: 32px;
+    // }
 }
 
