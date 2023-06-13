@@ -1,0 +1,12 @@
+@use '../util';
+
+@include util.breakpoint (xsmall) {
+    .popular-foods {
+        padding: 64px 32px;
+    }
+    
+    .popular-foods__card,
+    .popular-foods__card.active-card {
+        min-width: 100%;
+    }
+};

@@ -1,3 +1,7 @@
 
 // Importing styles from the globals folder. Automatically looks for the _index.scss file.
 @forward 'globals';
+// Importing styles from teh sections folder.
+@forward 'sections';
+// Importing styles from the layout folder.
+@forward 'layout';

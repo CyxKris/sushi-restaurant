@@ -1,0 +1,35 @@
+@use '../util';
+
+@include util.breakpoint (large) {
+    .trending-sushi {
+        flex-direction: column;
+    }
+    
+    .trending-drink {
+        flex-direction: column-reverse;
+    }
+    
+    .trending__image {
+        width: 100%;
+        background-size: cover;
+    }
+    
+    .trending__discover {
+        display: none;
+    }
+    
+    .trending__arrow {
+        display: none;
+    }
+};
+
+@include util.breakpoint (xsmall) {
+    .trending__image img {
+        width: 70%;
+        height: 70%;
+    }
+    
+    .trending__content {
+        padding: 32px;
+    }
+};
