@@ -1,17 +1,19 @@
 @use '../util';
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: util.$playfair;
+    font-family: util.$jakarta;
     max-width: 1280px;
     margin: 0 auto;
     background-color: var(--color-cream);
+    scroll-behavior: smooth;
 }
 
 a {
