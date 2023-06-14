@@ -133,7 +133,7 @@
         flex-direction: column;
         justify-content: center;
 
-        @include util.breakpoing (xsmall) {
+        @include util.breakpoint (xsmall) {
             padding: 2rem;
         };
     };
