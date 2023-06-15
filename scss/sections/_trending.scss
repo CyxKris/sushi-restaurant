@@ -6,55 +6,8 @@
     flex-direction: column;
     overflow: hidden;
 
-    &__image {
+    &__content {
         padding: 2rem 4rem;
-
-        flex: 1;
-        position: relative;
-        background-color: var(--color-white);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-
-        @include util.breakpoint (large) {
-            width: 100%;
-            background-size: cover;
-        };
-
-        img {
-            width: 15.875rem;
-            height: 16.25rem;
-            object-fit: contain;
-
-            @include util.breakpoint (xsmall) {
-                width: 70%;
-                height: 70%;
-            };
-        };
-
-        .trending__arrow {
-            position: absolute;
-            z-index: 1;
-
-            @include util.breakpoint (large) {
-                display: none;
-            };
-        };
-    };
-
-    &-sushi {
-        width: 100%;
-        min-height: 40rem;
-
-        display: flex;
-        flex-direction: row;
-
-        @include util.breakpoint (large) {
-            flex-direction: column;
-        };
-
-        .trending__content {
-            padding: 2rem 4rem;
 
             flex: 1;
             display: flex;
@@ -102,6 +55,56 @@
                     };
                 };
             };
+    }
+
+    &__image {
+        padding: 2rem 4rem;
+
+        flex: 1;
+        position: relative;
+        background-color: var(--color-white);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include util.breakpoint (large) {
+            width: 100%;
+            background-size: cover;
+        };
+
+        img {
+            width: 15.875rem;
+            height: 16.25rem;
+            object-fit: contain;
+
+            @include util.breakpoint (xsmall) {
+                width: 70%;
+                height: 70%;
+            };
+        };
+
+        .trending__arrow {
+            position: absolute;
+            z-index: 1;
+
+            @include util.breakpoint (large) {
+                display: none;
+            };
+        };
+    };
+
+    &-sushi, &-drinks {
+        width: 100%;
+        min-height: 40rem;
+
+        display: flex;
+    };
+
+    &-sushi {
+        flex-direction: row;
+
+        @include util.breakpoint (large) {
+            flex-direction: column;
         };
 
         .trending__image {
@@ -130,31 +133,67 @@
             };
         };
     };
+
+    &-discover {
+        position: absolute;
+        top: 44%;
+        left: 44%;
+
+        width: 10rem;
+        height: 10rem;
+        border-radius: 100%;
+        background-color: var(--secondary-color);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 1;
+        cursor: pointer;
+
+        @include util.breakpoint (large) {
+            display: none;
+        };
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            font-family: util.$jakarta;
+            text-transform: uppercase;
+            color: var(--color-white);
+        }
+    };
+
+    &-drinks {
+        @include util.breakpoint (large) {
+            flex-direction: column-reverse;
+        };
+
+        .trending__image {
+            background-image: url("../../assets/japanese_drinks.png");
+
+            .trending__arrow {
+                &--right {
+                    bottom: 12%;
+                    right: -0.1563rem;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    };
+                };
+
+                &--top {
+                    top: -0.9rem;
+                    left: 12%;
+
+                    img {
+                        width: auto;
+                        height: 100%;
+                    };
+                };
+            };
+        };
+    }
 };
 
-@include util.breakpoint (large) {
-    
-    .trending-drink {
-        flex-direction: column-reverse;
-    }
-    
-    // .trending__image {
-    //     width: 100%;
-    //     background-size: cover;
-    // }
-    
-    .trending__discover {
-        display: none;
-    }
-};
-
-@include util.breakpoint (xsmall) {
-    // .trending__image img {
-    //     width: 70%;
-    //     height: 70%;
-    // }
-    
-    // .trending__content {
-    //     padding: 32px;
-    // }
-};
