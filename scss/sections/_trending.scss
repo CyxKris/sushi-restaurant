@@ -1,35 +1,160 @@
 @use '../util';
 
+.trending {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &__image {
+        padding: 2rem 4rem;
+
+        flex: 1;
+        position: relative;
+        background-color: var(--color-white);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include util.breakpoint (large) {
+            width: 100%;
+            background-size: cover;
+        };
+
+        img {
+            width: 15.875rem;
+            height: 16.25rem;
+            object-fit: contain;
+
+            @include util.breakpoint (xsmall) {
+                width: 70%;
+                height: 70%;
+            };
+        };
+
+        .trending__arrow {
+            position: absolute;
+            z-index: 1;
+
+            @include util.breakpoint (large) {
+                display: none;
+            };
+        };
+    };
+
+    &-sushi {
+        width: 100%;
+        min-height: 40rem;
+
+        display: flex;
+        flex-direction: row;
+
+        @include util.breakpoint (large) {
+            flex-direction: column;
+        };
+
+        .trending__content {
+            padding: 2rem 4rem;
+
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include util.breakpoint (xsmall) {
+                padding: 2rem;
+            };
+
+            .trending__list {
+                list-style: none;
+                flex-wrap: wrap;
+                gap: 1.25rem;
+
+                li {
+                    flex: 1;
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: .75rem;
+
+                    min-width: 7.5rem;
+
+                    .trending__icon {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        border-radius: 50%;
+                        background-color: var(--primary-color);
+
+                        img {
+                            width: 50%;
+                            height: 50%;
+                            object-fit: contain;
+                        };
+                    };
+
+                    p {
+                        flex: 1;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        font-family: util.$jakarta;
+                        color: var(--secondary-color);
+                    };
+                };
+            };
+        };
+
+        .trending__image {
+            background-image: url("../../assets/japanese_sushi.png");
+
+            .trending__arrow {
+                &--left {
+                    top: 12%;
+                    left: -0.1563rem;
+
+                    img {
+                        width: auto;
+                        height: 100%;
+                    };
+                };
+
+                &--bottom {
+                    right: 12%;
+                    bottom: -0.4063rem;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    };
+                };
+            };
+        };
+    };
+};
+
 @include util.breakpoint (large) {
-    .trending-sushi {
-        flex-direction: column;
-    }
     
     .trending-drink {
         flex-direction: column-reverse;
     }
     
-    .trending__image {
-        width: 100%;
-        background-size: cover;
-    }
+    // .trending__image {
+    //     width: 100%;
+    //     background-size: cover;
+    // }
     
     .trending__discover {
-        display: none;
-    }
-    
-    .trending__arrow {
         display: none;
     }
 };
 
 @include util.breakpoint (xsmall) {
-    .trending__image img {
-        width: 70%;
-        height: 70%;
-    }
+    // .trending__image img {
+    //     width: 70%;
+    //     height: 70%;
+    // }
     
-    .trending__content {
-        padding: 32px;
-    }
+    // .trending__content {
+    //     padding: 32px;
+    // }
 };
