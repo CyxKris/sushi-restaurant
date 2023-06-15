@@ -1,0 +1,64 @@
+@use '../util';
+
+.footer {
+    width: 100%;
+    padding: 1.25rem 2.5rem;
+    background-color: var(--color-white);
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    overflow: hidden;
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        cursor: pointer;
+
+        span {
+            color: var(--primary-color);
+        };
+    };
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    };
+
+    &__nav {
+        gap: 4rem;
+
+        li {
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: util.$jakarta;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            };
+        };
+    };
+
+    &__social {
+        gap: 2rem;
+
+        li {
+            width: 2.625rem;
+            height: 2.625rem;
+            background-color: var(--secondary-color);
+            border-radius: 100%;
+
+            img {
+                width: 45%;
+                height: 45%;
+                object-fit: contain;
+            };
+        };
+    };
+};
