@@ -1,9 +1,112 @@
 @use '../util';
 
-@include util.breakpoint (xsmall) {
-    .popular-foods {
-        padding: 64px 32px;
+.popular-foods {
+    padding: 4rem;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--primary-color);
+    background-image: url("../../assets/popular_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    overflow: hidden;
+
+    @include util.breakpoint (xsmall) {
+        padding: 4rem 2rem;
+    };
+
+    &__title {
+        font-size: 3.5rem;
+        font-weight: 600;
+        line-height: 4.875rem;
+        color: var(--color-white);
+        text-align: center;
+    };
+
+    &__filters {
+        margin-top: 3rem;
+        max-width: 100%;
+        overflow-x: hidden;
+
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+
+        &--btn {
+            padding: .625rem 1.75rem;
+
+            display: flex;
+            align-items: center;
+            gap: .625rem;
+
+            background-color: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2.875rem;
+            outline: none;
+
+            font-family: util.$jakarta;
+            font-size: 1rem;
+            line-height: 1.5625rem;
+            color: var(--color-white);
+
+            cursor: pointer;
+
+            img {
+                width: 2.25rem;
+                height: 2.25rem;
+                object-fit: contain;
+            };
+
+            &.active, &:hover {
+                background-color: var(--color-white);
+                color: var(--primary-color);
+            };
+        };
+    };
+
+    &__catalogue {
+        margin-top: 4rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 3.5rem;
+    };
+
+    &__button {
+        padding: 1.25rem 1.875rem;
+
+        width: fit-content;
+        margin: 5rem auto 0;
+
+        font-weight: 500;
+        font-size: 1.125rem;
+        font-family: util.$jakarta;
+        line-height: 1.4375rem;
+        color: var(--color-white);
+
+        background-color: var(--secondary-color);
+        border: none;
+        border-radius: 4rem;
+        outline: none;
+
+        cursor: pointer;
+
+        img {
+            width: .875rem;
+            height: .875rem;
+            margin-left: 1.3125rem;
+            object-fit: contain;
+        }
     }
+};
+
+@include util.breakpoint (xsmall) {
     
     .popular-foods__card,
     .popular-foods__card.active-card {

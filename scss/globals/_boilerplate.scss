@@ -21,10 +21,31 @@ a {
     color: inherit;
 }
 
+// The sushi title, subtitle and description classes
+.sushi__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: util.$jakarta;
+
+    color: var(--primary-color);
+    opacity: 0.8;
+
+    letter-spacing: -0.01em;
+}
+
+.sushi__title {
+    font-size: 64px;
+    font-weight: 600;
+
+    color: var(--secondary-color);
+
+    margin-top: 16px;
+}
+
 .sushi__description {
     font-size: 18px;
     font-weight: 400;
-    font-family: var(--plus-jakarta-sans);
+    font-family: util.$jakarta;
 
     line-height: 36px;
     letter-spacing: -0.01em;
